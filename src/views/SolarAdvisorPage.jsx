@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import UserInputForm from '../components/UserInputForm';
 import ObstacleEditor from '../components/ObstacleEditor';
+import PanelLayoutVisualizer from '../components/PanelLayoutVisualizer';
+import { calculateOptimalPanelLayout } from '../utils/calculatePanelPlacement';
 
 const questions = [
   { id: 1, label: "What are the roof's dimensions in meters? (length x width)", key: 'dimensions' },
@@ -13,6 +15,7 @@ const questions = [
   { id: 8, label: "What is the monthly energy need? (in kWh) or type 'unrestricted'", key: 'energyNeed' },
 ];
 
+
 export default function SolarAdvisorPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState(() => {
@@ -21,6 +24,7 @@ export default function SolarAdvisorPage() {
   });
   const [input, setInput] = useState("");
   const [confirmed, setConfirmed] = useState(false);
+  const [obstaclesCleared, setObstaclesCleared] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('solarAnswers', JSON.stringify(answers));
@@ -45,16 +49,40 @@ export default function SolarAdvisorPage() {
       <div className="w-full max-w-xl bg-white rounded shadow p-6">
         {step < questions.length ? (
           step === 5 && answers.dimensions ? (
-            <ObstacleEditor
-              roofWidth={parseFloat(answers.dimensions.split('x')[0])}
-              roofHeight={parseFloat(answers.dimensions.split('x')[1])}
-              onObstaclePlaced={(newObstacle) => {
-                const updated = [...(answers.obstacles || []), newObstacle];
-                setAnswers({ ...answers, obstacles: updated });
-              }}
-              onComplete={() => setStep(step + 1)}
-            />
-          ) : (
+  <>
+    {!obstaclesCleared && (() => {
+      const cleared = { ...answers, obstacles: [] };
+      setAnswers(cleared);
+      setObstaclesCleared(true);
+    })()}
+    
+    <ObstacleEditor
+      roofWidth={parseFloat(answers.dimensions.split('x')[0])}
+      roofHeight={parseFloat(answers.dimensions.split('x')[1])}
+      onObstaclePlaced={(newObstacle) => {
+        const updated = [...(answers.obstacles || []), newObstacle];
+        setAnswers({ ...answers, obstacles: updated });
+      }}
+      onComplete={() => {
+        const roofWidth = parseFloat(answers.dimensions.split('x')[0]);
+        const roofHeight = parseFloat(answers.dimensions.split('x')[1]);
+        const result = calculateOptimalPanelLayout(answers.obstacles, roofWidth, roofHeight);
+
+        setAnswers(prev => ({
+          ...prev,
+          panelLayout: result.layout,
+          panelStats: {
+            count: result.count,
+            orientation: result.orientation,
+            power: result.power,
+          }
+        }));
+
+        setStep(step + 1);
+      }}
+    />
+  </>
+): (
             <div>
               {step > 0 && (
                 <div className="mb-6 p-4 bg-gray-100 rounded text-sm text-gray-700 shadow-sm">
@@ -67,7 +95,7 @@ export default function SolarAdvisorPage() {
                           <ul className="ml-4 list-square">
                             {(answers[q.key] || []).map((obs, i) => (
                               <li key={i}>
-                                {i + 1}. {obs.type} – {obs.width}m x {obs.height}m at ({obs.position.x}, {obs.position.y})
+                                {i + 1}. {obs.type} – {obs.width}m x {obs.height}m at ({obs.position?.x ?? '—'}, {obs.position?.y ?? '—'})
                               </li>
                             ))}
                           </ul>
@@ -112,7 +140,26 @@ export default function SolarAdvisorPage() {
             <p className="text-sm text-gray-600">Analysis will begin shortly.</p>
           </div>
         ) : (
-          <UserInputForm onValidated={handleFormValidated} />
+          <div>
+            <UserInputForm onValidated={handleFormValidated} />
+
+           {answers.dimensions && step >= 8 && answers.panelLayout && (
+  <>
+    <div className="bg-green-50 text-green-800 p-4 rounded mb-4">
+      ✅ <strong>{answers.panelStats?.count}</strong> panel yerleştirildi (
+      {answers.panelStats?.orientation}) • ⚡ <strong>{answers.panelStats?.power} kW</strong>
+    </div>
+
+    <PanelLayoutVisualizer
+      panelLayout={answers.panelLayout}
+      roofWidth={parseFloat(answers.dimensions.split('x')[0])}
+      roofHeight={parseFloat(answers.dimensions.split('x')[1])}
+    />
+  </>
+)}
+
+
+          </div>
         )}
       </div>
     </div>

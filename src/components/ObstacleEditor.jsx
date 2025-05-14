@@ -1,7 +1,9 @@
-import React, { useRef, useState, useEffect, useCallback  } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { calculateOptimalPanelLayout } from '../utils/calculatePanelPlacement';
 
 export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced, onComplete }) {
+  const debugMode = import.meta.env.MODE === 'development';
+
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [currentObstacle, setCurrentObstacle] = useState({ type: 'chimney', width: '', height: '' });
@@ -13,6 +15,25 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
   const [manualX, setManualX] = useState(0);
   const [manualY, setManualY] = useState(0);
   const [panelStats, setPanelStats] = useState(null);
+
+  // eslint-disable-next-line no-unused-vars
+  const [panelLayout, setPanelLayout] = useState([]);
+
+  // ilk açılışta engelleri temizle
+  useEffect(() => {
+    setObstacles([]);
+  }, []);
+
+  function resetAfterAdd(newObstacle) {
+    const updated = [...obstacles, newObstacle];
+    setObstacles(updated);
+    onObstaclePlaced(newObstacle);
+    setCurrentObstacle({ type: 'chimney', width: '', height: '' });
+    setPosition({ x: 0, y: 0 });
+    setManualX(0);
+    setManualY(0);
+    setIsPlacing(true);
+  }
 
   const getPixelsPerMeter = useCallback(() => {
     const maxCanvasWidth = containerRef.current?.offsetWidth || 800;
@@ -31,10 +52,6 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
 
   const canvasWidth = roofWidth * pixelsPerMeter;
   const canvasHeight = roofHeight * pixelsPerMeter;
-
-  // 🔁 moved to utils/calculatePanelPlacement.js
-
-  // 🔁 moved to utils/calculatePanelPlacement.js
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -113,6 +130,16 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
   };
 
   const placeWithManualCoordinates = () => {
+    if (!currentObstacle.width || !currentObstacle.height) {
+      alert("Lütfen önce engelin boyutlarını giriniz.");
+      return;
+    }
+
+    if ((manualX === 0 && manualY === 0) && !debugMode) {
+      alert("Lütfen engelin konumunu belirleyin (0,0 olamaz).");
+      return;
+    }
+
     const manualPosition = {
       x: parseFloat(manualX),
       y: parseFloat(manualY)
@@ -125,38 +152,43 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
       height: parseFloat(currentObstacle.height)
     };
 
-    const updated = [...obstacles, newObstacle];
-    setObstacles(updated);
-    onObstaclePlaced(newObstacle);
-    setCurrentObstacle({ type: 'chimney', width: '', height: '' });
-    setPosition({ x: 0, y: 0 });
-    setManualX(0);
-    setManualY(0);
-    setIsPlacing(true);
+    resetAfterAdd(newObstacle);
   };
 
   const confirmObstacle = () => {
+    if (!currentObstacle.width || !currentObstacle.height) {
+      alert("Lütfen önce engel boyutlarını giriniz.");
+      return;
+    }
+
+    if ((position.x === 0 && position.y === 0) && !debugMode) {
+      alert("Lütfen mouse ile engel yerini seçin (0,0 geçersiz).");
+      return;
+    }
+
     const newObstacle = {
       ...currentObstacle,
       position: { ...position },
       width: parseFloat(currentObstacle.width),
       height: parseFloat(currentObstacle.height)
     };
-    const updated = [...obstacles, newObstacle];
-    setObstacles(updated);
-    onObstaclePlaced(newObstacle);
-    setCurrentObstacle({ type: 'chimney', width: '', height: '' });
-    setPosition({ x: 0, y: 0 });
-    setManualX(0);
-    setManualY(0);
-    setIsPlacing(true);
+
+    resetAfterAdd(newObstacle);
+  };
+
+  const handleCalculatePanels = () => {
+    const result = calculateOptimalPanelLayout(obstacles, roofWidth, roofHeight);
+    setPanelStats(result);
+    setPanelLayout(result.layout);
+    console.log("Yerleşim Panel Koordinatları:", result.layout);
   };
 
   return (
     <div className="space-y-4" ref={containerRef}>
       <h2 className="text-lg font-semibold">Engel Yerleşim Editörü</h2>
 
-      <div className="flex flex-col md:flex-row md:items-end gap-4">
+      {/* Engellerin tanımı */}
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium">Engel Tipi:</label>
           <select
@@ -171,81 +203,83 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
             <option value="other">Diğer</option>
           </select>
         </div>
+
         <div>
           <label className="block text-sm font-medium">Genişlik (m):</label>
           <input
             type="number"
+            className="border p-2 rounded w-full"
             value={currentObstacle.width}
             onChange={(e) => setCurrentObstacle({ ...currentObstacle, width: e.target.value })}
-            className="border p-2 rounded w-full"
           />
         </div>
+
         <div>
           <label className="block text-sm font-medium">Yükseklik (m):</label>
           <input
             type="number"
+            className="border p-2 rounded w-full"
             value={currentObstacle.height}
             onChange={(e) => setCurrentObstacle({ ...currentObstacle, height: e.target.value })}
-            className="border p-2 rounded w-full"
           />
         </div>
-      </div>
 
-      <div className="flex flex-col md:flex-row md:items-end gap-4">
         <div>
-          <label className="block text-sm font-medium">Engelin Çatının En Alt Köşesine Göre Yatay Mesafesi (m):</label>
+          <label className="block text-sm font-medium">X Konumu (m):</label>
           <input
             type="number"
+            className="border p-2 rounded w-full"
             value={manualX}
             onChange={(e) => setManualX(e.target.value)}
-            className="border p-2 rounded w-full"
           />
         </div>
+
         <div>
-          <label className="block text-sm font-medium">Engelin Çatının En Alt Köşesine Göre Dikey Mesafesi (m):</label>
+          <label className="block text-sm font-medium">Y Konumu (m):</label>
           <input
             type="number"
+            className="border p-2 rounded w-full"
             value={manualY}
             onChange={(e) => setManualY(e.target.value)}
-            className="border p-2 rounded w-full"
           />
         </div>
       </div>
 
-      <button
-        onClick={placeWithManualCoordinates}
-        className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
-      >
-        📍 Engeli Yerleştir
-      </button>
+      {/* 📍 🖱️ ♻️ butonları yatay şekilde */}
+      <div className="flex flex-col sm:flex-row gap-4 mt-4">
+        <button
+          onClick={placeWithManualCoordinates}
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          📍 Engeli Yerleştir
+        </button>
 
-      <p className="text-sm text-yellow-500">⚠️ Engelin pozisyonunu mouse ile değiştirmek istermisiniz?</p>
+        <div className="flex items-center gap-2">
+          <label className="text-sm">🖱️ Mouse ile yerleştirmek istiyorum:</label>
+          <input
+            type="checkbox"
+            checked={drawEnabled}
+            onChange={() => {
+              setDrawEnabled(!drawEnabled);
+              setIsPlacing(true);
+            }}
+          />
+        </div>
 
-      <div className="flex items-center gap-2">
-        <label className="text-sm">Mouse ile yerleştirmek istiyorum:</label>
-        <input
-          type="checkbox"
-          checked={drawEnabled}
-          onChange={() => {
-            setDrawEnabled(!drawEnabled);
-            setIsPlacing(true);
+        <button
+          onClick={() => {
+            const confirmed = confirm("Daha önce girdiğiniz tüm engelleri silmek istiyor musunuz?");
+            if (confirmed) {
+              setObstacles([]);
+            }
           }}
-        />
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+        >
+          ♻️ Önceki Engelleri Temizle
+        </button>
       </div>
 
-      <p className="text-sm text-yellow-500">İşlem bitince lütfen kaydetmeyi unutmayınız.</p>
-
-      <button
-        onClick={confirmObstacle}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        💾 Bu Engeli Kaydet
-      </button>
-
-      <p className="text-sm text-gray-600">
-        Canlı pozisyon: (x: {position.x} m, y: {position.y} m)
-      </p>
-
+      {/* Kanvas çizimi */}
       <canvas
         ref={canvasRef}
         width={canvasWidth}
@@ -255,8 +289,9 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
         onMouseMove={handleMouseMove}
       />
 
+      {/* Panel Yerleşim Hesaplama */}
       <button
-        onClick={() => setPanelStats(calculateOptimalPanelLayout(obstacles, roofWidth, roofHeight))}
+        onClick={handleCalculatePanels}
         className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
       >
         ⚡ Panel Yerleşimini Hesapla
@@ -266,20 +301,20 @@ export default function ObstacleEditor({ roofWidth, roofHeight, onObstaclePlaced
         <div className="bg-indigo-50 text-indigo-800 p-4 rounded mt-2 text-sm">
           Yapay zeka analizi sonucu:
           <br />
-          Tercih edilen yön: <strong>{panelStats.orientation}</strong>
-          <br />
-          Panel sayısı: <strong>{panelStats.count}</strong>
-          <br />
-          Kurulu güç: <strong>{panelStats.power} kWp</strong>
+          Tercih edilen yön: <strong>{panelStats.orientation}</strong><br />
+          Panel sayısı: <strong>{panelStats.count}</strong><br />
+          ⚡ Tahmini Güç: <strong>{panelStats.power} kW</strong>
         </div>
       )}
 
-      <button
-        onClick={onComplete}
-        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-      >
-        ✅ Tüm Engeller Yerleştirildi
-      </button>
+      {panelStats && (
+        <button
+          onClick={onComplete}
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mt-4"
+        >
+          ✅ Tüm Engeller Yerleştirildi
+        </button>
+      )}
     </div>
   );
 }

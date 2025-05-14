@@ -4,15 +4,15 @@ export function calculateOptimalPanelLayout(obstacles, roofWidth, roofHeight) {
     { orientation: 'Dikey', width: 1.1, height: 1.7 },
   ];
 
-  const fitCount = ({ width: pw, height: ph }) => {
+  const fitLayout = ({ width: pw, height: ph }) => {
     const cols = Math.floor(roofWidth / pw);
     const rows = Math.floor(roofHeight / ph);
-    let count = 0;
+    const placedPanels = [];
 
-    for (let y = 0; y < rows; y++) {
-      for (let x = 0; x < cols; x++) {
-        const px = x * pw;
-        const py = y * ph;
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const px = col * pw;
+        const py = row * ph;
 
         const blocked = obstacles.some(obs =>
           px < obs.position.x + obs.width &&
@@ -21,23 +21,25 @@ export function calculateOptimalPanelLayout(obstacles, roofWidth, roofHeight) {
           py + ph > obs.position.y
         );
 
-        if (!blocked) count++;
+        if (!blocked) {
+          placedPanels.push({ x: px, y: py, width: pw, height: ph });
+        }
       }
     }
-    return count;
+
+    return placedPanels;
   };
 
   const results = layouts.map(layout => {
-    const count = fitCount(layout);
+    const placed = fitLayout(layout);
     return {
       orientation: layout.orientation,
-      count,
-      power: parseFloat((count * 570 / 1000).toFixed(2)),
+      count: placed.length,
+      power: parseFloat((placed.length * 570 / 1000).toFixed(2)),
+      layout: placed
     };
   });
 
-  const [horizontal, vertical] = results;
-  const best = horizontal.count >= vertical.count ? horizontal : vertical;
-
+  const best = results.reduce((a, b) => (a.count >= b.count ? a : b));
   return best;
 }
