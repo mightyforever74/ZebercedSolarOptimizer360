@@ -17,6 +17,12 @@ It supports panel layout planning, shading constraints, weight limits, and elect
 - 📄 PDF/HTML customer-friendly proposal generation
 
 ---
+## 🚀 New Features
+
+- AI-powered panel layout
+- Visual roof plan with SVG
+- Obstacle-based layout algorithm
+- Obstacle data recording managed with localStorage
 
 ## 🧪 Project Status
 
