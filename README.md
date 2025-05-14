@@ -1,45 +1,35 @@
-readme_content = """
-# ☀️ SolarOptimizer360
+# ☀️ SolarOptimizer360 – Güneş Paneli Yerleşim Yardımcısı / Solar Panel Layout Assistant
 
-**SolarOptimizer360** is an open-source tool designed to simulate and optimize solar panel placement on rooftops.  
-It supports panel layout planning, shading constraints, weight limits, and electricity production calculations.
+## 🇹🇷 Türkçe Açıklama
 
----
+SolarOptimizer360, çatılar üzerindeki engellere göre yapay zekâ destekli en uygun güneş paneli yerleşimini hesaplar ve SVG ile görselleştirir.
 
-## 🔧 Features
+### 🚀 Yeni Özellikler
 
-- 📐 Universal solar panel catalog (dimensions, power, weight, efficiency)
-- 🌇 Obstacle-aware layout (chimneys, shading zones, etc.)
-- ⚡ Electricity need calculation & panel matching
-- 🧱 Weight limit filtering for structural safety
-- 💰 Cost vs. Efficiency comparison (ROI-based selection)
-- 🖼️ 2D visual panel layout (coming soon)
-- 📄 PDF/HTML customer-friendly proposal generation
+- ⚡ Yapay zekâ destekli panel yerleşim algoritması
+- 🧱 Engel tespiti ve çakışma kontrolü (baca, klima, pencere vs.)
+- 🖼️ SVG ile çatı üstü panel yerleşim görselleştirmesi
+- 💾 LocalStorage üzerinden oturum takibi ve veri kaydı
+- ✅ Eski engellerin otomatik temizlenmesi
 
----
-## 🚀 New Features
+### 📷 Panel Çizimi Örneği
 
-- AI-powered panel layout
-- Visual roof plan with SVG
-- Obstacle-based layout algorithm
-- Obstacle data recording managed with localStorage
-
-## 🧪 Project Status
-
-🚧 This is a **Work In Progress**. Core features are being developed and structured modularly.  
-You are welcome to contribute via pull requests or issues.
+![SVG Panel Yerleşimi](./docs/sample-panel-layout.png)
 
 ---
 
-## 🚀 Getting Started
+## 🇬🇧 English Description
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/SolarOptimizer360.git
-cd SolarOptimizer360
+SolarOptimizer360 is an AI-powered web tool to calculate the optimal solar panel layout based on roof obstacles and visualize the result using SVG.
 
-# Install requirements
-pip install -r requirements.txt
+### 🚀 New Features
 
-# Run local app (UI & backend in development)
-python app.py
+- ⚡ AI-powered panel placement algorithm
+- 🧱 Obstacle-aware layout (chimneys, air units, skylights etc.)
+- 🖼️ SVG-based rooftop layout visualization
+- 💾 Session tracking and state persistence via LocalStorage
+- ✅ Auto-clearing of outdated obstacle data
+
+### 📷 Sample Layout View
+
+![SVG Panel Layout](./docs/sample-panel-layout.png)
