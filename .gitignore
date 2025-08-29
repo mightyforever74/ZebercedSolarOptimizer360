@@ -1,4 +1,13 @@
-# Logs
+Next.js
+data/postgres/
+data/redis/
+*.pyc
+*.pyo
+*.pyd
+
+.DS_Store
+.vscode/
+.idea/
 # Logs
 logs
 *.log
@@ -7,12 +16,29 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+.env
 # Dependency directories
 node_modules
 dist
 dist-ssr
 *.local
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+out/
+
+# vercel
+.vercel
+
+# production
+/build
 
 # Python (if backend exists)
 env/
@@ -50,3 +76,9 @@ credentials.json
 *.pdf
 *.zip
 exported_reports/
+node_modules/
+.next/
+dist/
+*.log
+.env.local
+

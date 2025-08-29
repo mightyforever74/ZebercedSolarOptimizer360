@@ -1,34 +1,105 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import calculateOptimalPanelLayout from "../utils/calculatePanelPlacement";
+import fallbackLayout from "../utils/fallbackLayout";
 
-export default function PanelLayoutVisualizer({ panelLayout, roofWidth, roofHeight, pixelsPerMeter = 80 }) {
-  const svgWidth = roofWidth * pixelsPerMeter;
-  const svgHeight = roofHeight * pixelsPerMeter;
+export default function PanelLayoutVisualizer({
+  obstacles = [],
+  roofWidth,
+  roofHeight,
+  scale = 40,
+}) {
+  const [layout, setLayout] = useState([]);
+
+  // 1️⃣ Fetch ML‐driven layout (with reward) or fallback
+  useEffect(() => {
+    async function loadLayout() {
+      try {
+        const result = await calculateOptimalPanelLayout(
+          obstacles,
+          roofWidth,
+          roofHeight
+        );
+        setLayout(result.layout || []);
+      } catch (err) {
+        console.error("ML failed, using fallback:", err);
+        const panelSpec = { width: roofWidth / 10, height: roofHeight / 10 };
+        const fallback = fallbackLayout(
+          obstacles,
+          roofWidth,
+          roofHeight,
+          panelSpec
+        );
+        setLayout(fallback);
+      }
+    }
+    loadLayout();
+  }, [obstacles, roofWidth, roofHeight]);
+
+  // DEBUG: log incoming count
+  useEffect(() => {
+    console.log("[Visualizer] received layout.length =", layout.length);
+  }, [layout]);
+
+  // Early exit
+  if (!Array.isArray(layout) || layout.length === 0) return null;
+  // Compute bounds so nothing gets clipped
+  const maxX =
+    Math.max(...layout.map((p) => Number(p.x) + Number(p.width))) * scale;
+  const maxY =
+    Math.max(...layout.map((p) => Number(p.y) + Number(p.height))) * scale;
 
   return (
-    <div className="mt-6">
-      <h3 className="font-semibold text-lg mb-2">🔍 Panel Yerleşimi Görselleştirme</h3>
-      <svg width={svgWidth} height={svgHeight} className="border border-gray-400 bg-white">
-        <rect x="0" y="0" width={svgWidth} height={svgHeight} fill="none" stroke="#999" strokeWidth="1" />
-        {panelLayout.map((panel, index) => {
-          const x = panel.x * pixelsPerMeter;
-          const y = svgHeight - (panel.y + panel.height) * pixelsPerMeter;
-          const width = panel.width * pixelsPerMeter;
-          const height = panel.height * pixelsPerMeter;
+    <svg
+      width="100%"
+      height="100%"
+      viewBox={`0 0 ${maxX} ${maxY}`}
+      onLoad={() => {
+        const drawn =
+          document.querySelectorAll("svg > rect").length - obstacles.length;
+        console.log(
+          "[Visualizer] drew panel rects =",
+          drawn,
+          "(should = layout.length)"
+        );
+      }}
+    >
+      {/* Draw obstacles */}
+      {obstacles.map((obs, idx) => {
+        const ox = Number(obs.x ?? obs.position?.x ?? 0) * scale;
+        const oy = Number(obs.y ?? obs.position?.y ?? 0) * scale;
+        const ow = Number(obs.width ?? 1) * scale;
+        const oh = Number(obs.height ?? 1) * scale;
+        return (
+          <rect
+            key={`obs-${idx}`}
+            x={ox}
+            y={oy}
+            width={ow}
+            height={oh}
+            fill="gray"
+            stroke="black"
+          />
+        );
+      })}
 
-          return (
-            <rect
-              key={index}
-              x={x}
-              y={y}
-              width={width}
-              height={height}
-              fill="#22c55e"
-              stroke="#14532d"
-              strokeWidth="1"
-            />
-          );
-        })}
-      </svg>
-    </div>
+      {/* Draw panels */}
+      {layout.map((panel, i) => {
+        const x = Number(panel.x || 0) * scale;
+        const y = Number(panel.y || 0) * scale;
+        const w = Number(panel.width || 1) * scale;
+        const h = Number(panel.height || 1) * scale;
+        return (
+          <rect
+            key={`panel-${i}`}
+            x={x}
+            y={y}
+            width={w}
+            height={h}
+            fill="green"
+            stroke="white"
+          />
+        );
+      })}
+    </svg>
   );
 }

@@ -1,0 +1,408 @@
+/*
+ .visualizerContainer	Görsel çizimi merkeze alır ve genişliği sınırlar.
+.panelVisualizerSvg	SVG boyutunu ayarlar, arka plan ve çerçeve ekler.
+@keyframes fadeInPanel	Panellerin içeriye yumuşak animasyonla gelmesini sağlar.
+.panelRect	Panel kutularına animasyon ve stil verir.
+.delay-X	Her panelin sırayla gecikmeli animasyonla gelmesini sağlar.
+.panelRect:hover	Panelin üstüne gelince büyüme ve kenar vurgusu efekti verir.
+.panelLabel	Panelin üzerine yazı (numara) ekler, tıklanamaz ve düzgün ortalanmış.
+ */
+/* ========== Container ve SVG ========== */
+/* ========== Container ve SVG ========== */
+.visualizerContainer {
+  width: 100%; /* 100vw yatay kaydırma yapabiliyor */
+  min-width: 320px;
+  /* Güvenli viewport yükseklik sıralaması */
+  height: 90vh;
+  height: 90svh;
+  height: 90dvh;
+  min-height: 320px;
+  max-height: 98vh;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafb;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.panel-visualizer-total {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* Panel çizim SVG’si */
+.panelVisualizerSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #f5f5f5;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+/* ========== Animasyon: Panel Girişi ========== */
+@keyframes panelDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5%) scale(0.94);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0.07rem 0.07rem 0.22rem rgba(0, 0, 0, 0.21));
+  }
+}
+
+.panelRect {
+  animation: panelDrop 0.44s cubic-bezier(0.43, 0.12, 0.68, 0.92) forwards;
+  opacity: 0;
+  transform-origin: center;
+  transition: transform 0.18s, stroke 0.18s, filter 0.18s;
+  will-change: transform, opacity, filter;
+}
+
+/* ========== Hover Efekti ========== */
+.panelRect:hover {
+  transform: scale(1.05); /* 1.09 çok sekebiliyor */
+  filter: brightness(1.08) drop-shadow(0 2px 9px #195b33bb);
+  stroke: #263238;
+  cursor: pointer;
+}
+
+/* ========== Panel etiketleri — TEK TANIM ========== */
+.panelLabel {
+  pointer-events: none;
+  font: 600 12px/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  fill: #fff;
+  paint-order: stroke fill;
+  stroke: rgba(0, 0, 0, 0.35);
+  stroke-width: 1.2px;
+  text-shadow: 0 1px 7px #111b;
+}
+
+/* ========== Gecikmeli Giriş (0-10) ========== */
+.delay-0 {
+  animation-delay: 0ms;
+}
+.delay-1 {
+  animation-delay: 100ms;
+}
+.delay-2 {
+  animation-delay: 200ms;
+}
+.delay-3 {
+  animation-delay: 300ms;
+}
+.delay-4 {
+  animation-delay: 400ms;
+}
+.delay-5 {
+  animation-delay: 500ms;
+}
+.delay-6 {
+  animation-delay: 600ms;
+}
+.delay-7 {
+  animation-delay: 700ms;
+}
+.delay-8 {
+  animation-delay: 800ms;
+}
+.delay-9 {
+  animation-delay: 900ms;
+}
+.delay-10 {
+  animation-delay: 1000ms;
+}
+
+/* ========== Süre Varyasyonu (opsiyonel) ========== */
+.duration-0 {
+  animation-duration: 0.35s;
+}
+.duration-1 {
+  animation-duration: 0.38s;
+}
+.duration-2 {
+  animation-duration: 0.41s;
+}
+.duration-3 {
+  animation-duration: 0.44s;
+}
+.duration-4 {
+  animation-duration: 0.47s;
+}
+.duration-5 {
+  animation-duration: 0.5s;
+}
+.duration-6 {
+  animation-duration: 0.53s;
+}
+.duration-7 {
+  animation-duration: 0.56s;
+}
+.duration-8 {
+  animation-duration: 0.59s;
+}
+.duration-9 {
+  animation-duration: 0.62s;
+}
+.duration-10 {
+  animation-duration: 0.65s;
+}
+
+/* ========== Tam ekran engel düzenleyici ========== */
+.fullscreenObstacleEditor {
+  width: 100%;
+  max-width: 100%;
+  /* güvenli vh */
+  height: 80vh;
+  height: 80svh;
+  height: 80dvh;
+  max-height: 90vh;
+  min-width: 320px;
+  min-height: 320px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafb;
+}
+
+/* ========== Canvas sarmalayıcıları ========== */
+.canvasWrap {
+  position: relative;
+}
+.canvasSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ========== Görsel stiller ========== */
+.obstacle {
+  fill: #e57373;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+}
+
+.panelBody {
+  fill: #1f2a44;
+  stroke: #0b1222;
+  stroke-width: 1px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.panelGrid path {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1px;
+}
+
+.panel {
+  opacity: 0;
+  transform: translateY(4px) scale(0.98);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.enter {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ========== Alt bilgi / animasyon bilgi balonu ========== */
+.animInfo {
+  position: absolute;
+  top: 44px; /* zoom barın biraz altı */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(17, 24, 39, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  display: inline-flex;
+  gap: 8px;
+  z-index: 6; /* zoom butonlarının da üstünde kalsın istersen 6 yap */
+}
+
+.skipBtn {
+  background: #fff;
+  color: #111827;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.skipBtn:hover {
+  background: #f0f0f0;
+}
+
+/* ========== Hareket azaltmayı tercih eden kullanıcılar ========== */
+@media (prefers-reduced-motion: reduce) {
+  .panelRect,
+  .panel {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Panel sahnesi – iki yöne scroll */
+.panel-stage {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 280px); /* Stepper yüksekliğine göre ayarla */
+  min-height: 420px;
+  overflow: auto; /* hem yatay hem dikey kaydırma */
+  padding: 8px 12px 12px; /* sağ/alt kırpmayı önler */
+  box-sizing: border-box;
+}
+
+/* SVG’yi içeren sarma – shrink olmasın, genişledikçe yatay scroll açılsın */
+.panel-canvas {
+  display: inline-block;
+  min-width: max-content; /* önemli: genişliği daraltma */
+}
+
+/* SVG kesmesin; hover/animasyon taşmaları da görünsün */
+.panel-svg {
+  display: block;
+  overflow: visible; /* drop-shadow/scale taşmaları için */
+  background: #f5f7fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* viewport: iç scroll */
+.pv-viewport {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 280px); /* Stepper + alt buton payı, gerekirse ayarla */
+  min-height: 420px;
+  overflow: auto;
+  background: #eef3f8;
+  border: 1px solid #dfe3ea;
+  border-radius: 12px;
+}
+
+/* görünmez sizer – ölçekle büyüyen scroll alanı */
+.pv-sizer {
+  width: 0;
+  height: 0;
+}
+
+/* ölçeklenen sahne */
+.pv-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+/* zoom butonları */
+.pv-zoom {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: grid;
+  gap: 6px;
+  z-index: 10;
+  pointer-events: auto;
+}
+.pv-zoom > button {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+  background: #111827;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.pv-zoom > button:hover {
+  filter: brightness(1.1);
+}
+
+/* Yeni PanelZoomShell stilleri */
+
+.pvViewport {
+  /* Stepper’ın hemen altında, ortalı görünmesi için dış sarmalayıcı */
+  margin: 12px auto 0;
+  width: min(1200px, calc(100% - 48px));
+  height: calc(100vh - 280px); /* üst bar + kartlardan sonra kalan */
+  min-height: 420px;
+
+  position: relative;
+  overflow: auto;
+  border-radius: 12px;
+  background: #f8fafb;
+  border: 1px solid #e5e7eb;
+
+  /* dinamik var’lar */
+  --cw: 800px;
+  --ch: 600px;
+  --scale: 1;
+}
+
+/* Scroll alanını ölçek oranına göre büyüten görünmez sizer */
+.pvSizer {
+  width: calc(var(--cw) * var(--scale));
+  height: calc(var(--ch) * var(--scale));
+}
+
+/* Asıl sahne – sol/üstten ölçeklenir; overflow görünür ki gölgeler kesilmesin */
+.pvStage {
+  position: absolute;
+  inset: 12px;
+  width: var(--cw);
+  height: var(--ch);
+  transform-origin: 0 0;
+  transform: scale(var(--scale));
+  overflow: visible;
+}
+
+/* Zoom butonları: üstte, ortalı */
+.pvZoom {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.pvZoom button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #111827;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+}
+.pvZoom button:hover {
+  filter: brightness(1.08);
+}
+
+/* iOS Safari uyumlulukları */
+.pvViewport {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}

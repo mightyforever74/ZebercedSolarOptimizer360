@@ -1,0 +1,4 @@
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="180" height="80" fill="lightblue" stroke="black"/>
+  <text x="100" y="55" font-size="14" text-anchor="middle" fill="black">Panel Yerleşim</text>
+</svg>

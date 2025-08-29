@@ -1,0 +1,1642 @@
+[
+  {
+    "city": "Adana",
+    "monthly_daily_hours": [
+      4.5,
+      5.4,
+      6,
+      7.2,
+      9.1,
+      10.5,
+      10.7,
+      10.3,
+      9.1,
+      7.5,
+      5.9,
+      4.4
+    ],
+    "yearly_total_hours": 2759.7,
+    "daily_avg_hours": 7.56,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ADANA"
+  },
+  {
+    "city": "Adıyaman",
+    "monthly_daily_hours": [
+      3.8,
+      4.6,
+      5.8,
+      7.4,
+      9.4,
+      11.6,
+      12.1,
+      11.4,
+      9.8,
+      7.3,
+      5.4,
+      3.9
+    ],
+    "yearly_total_hours": 2819.5,
+    "daily_avg_hours": 7.72,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ADIYAMAN"
+  },
+  {
+    "city": "Afyonkarahisar",
+    "monthly_daily_hours": [
+      2.9,
+      4.1,
+      5.1,
+      6.4,
+      8.1,
+      9.8,
+      11.2,
+      10.7,
+      8.8,
+      6.5,
+      4.8,
+      2.8
+    ],
+    "yearly_total_hours": 2475.1,
+    "daily_avg_hours": 6.87,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=AFYONKARAHISAR"
+  },
+  {
+    "city": "Ağrı",
+    "monthly_daily_hours": [
+      2.3,
+      3.1,
+      4.2,
+      5.7,
+      7.4,
+      9.5,
+      10.1,
+      9.9,
+      8.9,
+      6.6,
+      4.3,
+      2.3
+    ],
+    "yearly_total_hours": 2265.6,
+    "daily_avg_hours": 6.21,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=AGRI"
+  },
+  {
+    "city": "Aksaray",
+    "monthly_daily_hours": [
+      3.2,
+      4.5,
+      5.7,
+      7.1,
+      9.1,
+      11.1,
+      12.1,
+      11.5,
+      9.7,
+      7.1,
+      5,
+      3.2
+    ],
+    "yearly_total_hours": 2721.9,
+    "daily_avg_hours": 7.46,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=AKSARAY"
+  },
+  {
+    "city": "Amasya",
+    "monthly_daily_hours": [
+      2.3,
+      3.4,
+      4.5,
+      6,
+      7.4,
+      8.9,
+      9.7,
+      9.3,
+      7.6,
+      5.1,
+      3.4,
+      2.2
+    ],
+    "yearly_total_hours": 2127.7,
+    "daily_avg_hours": 5.83,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=AMASYA"
+  },
+  {
+    "city": "Ankara",
+    "monthly_daily_hours": [
+      2.6,
+      3.8,
+      5.1,
+      6.4,
+      8.2,
+      9.8,
+      11.1,
+      10.7,
+      9.2,
+      6.7,
+      4.6,
+      2.6
+    ],
+    "yearly_total_hours": 2463.4,
+    "daily_avg_hours": 6.75,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ANKARA"
+  },
+  {
+    "city": "Antalya",
+    "monthly_daily_hours": [
+      4.9,
+      5.7,
+      6.7,
+      7.9,
+      9.7,
+      11.1,
+      11.7,
+      11.1,
+      9.7,
+      7.8,
+      6.3,
+      4.8
+    ],
+    "yearly_total_hours": 2967.3,
+    "daily_avg_hours": 8.13,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ANTALYA"
+  },
+  {
+    "city": "Ardahan",
+    "monthly_daily_hours": [
+      2.8,
+      3.9,
+      4.9,
+      5.4,
+      6.3,
+      7.8,
+      8.2,
+      8.2,
+      7,
+      5.3,
+      3.8,
+      2.6
+    ],
+    "yearly_total_hours": 2016.5,
+    "daily_avg_hours": 5.52,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ARDAHAN"
+  },
+  {
+    "city": "Artvin",
+    "monthly_daily_hours": [
+      2.4,
+      3.4,
+      4.3,
+      5.2,
+      6.3,
+      7,
+      6.7,
+      6.9,
+      6.4,
+      4.7,
+      3.2,
+      2.2
+    ],
+    "yearly_total_hours": 1787.7,
+    "daily_avg_hours": 4.9,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ARTVIN"
+  },
+  {
+    "city": "Aydın",
+    "monthly_daily_hours": [
+      3.8,
+      4.3,
+      5.5,
+      6.4,
+      7.8,
+      9.4,
+      9.9,
+      9.3,
+      8.2,
+      6.3,
+      4.3,
+      3.5
+    ],
+    "yearly_total_hours": 2398.5,
+    "daily_avg_hours": 7.3,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=AYDIN"
+  },
+  {
+    "city": "Balıkesir",
+    "monthly_daily_hours": [
+      3,
+      4,
+      5.1,
+      6.7,
+      8.5,
+      10.2,
+      11.1,
+      10.1,
+      8,
+      6.1,
+      4.1,
+      2.7
+    ],
+    "yearly_total_hours": 2426.6,
+    "daily_avg_hours": 6.65,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BALIKESIR"
+  },
+  {
+    "city": "Bartın",
+    "monthly_daily_hours": [
+      2.3,
+      3.3,
+      4.3,
+      5.9,
+      7.3,
+      9,
+      9.9,
+      9.4,
+      7.5,
+      5.2,
+      3.7,
+      2.5
+    ],
+    "yearly_total_hours": 2143.3,
+    "daily_avg_hours": 5.87,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BARTIN"
+  },
+  {
+    "city": "Batman",
+    "monthly_daily_hours": [
+      3.3,
+      4.8,
+      5.5,
+      7.5,
+      9.2,
+      11.7,
+      12,
+      11.3,
+      9.9,
+      7.1,
+      5.2,
+      3
+    ],
+    "yearly_total_hours": 2756.8,
+    "daily_avg_hours": 7.55,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BATMAN"
+  },
+  {
+    "city": "Bayburt",
+    "monthly_daily_hours": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "yearly_total_hours": 0,
+    "daily_avg_hours": 0,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BAYBURT"
+  },
+  {
+    "city": "Bilecik",
+    "monthly_daily_hours": [
+      3,
+      3.7,
+      4.7,
+      6.3,
+      7.9,
+      9.6,
+      10.5,
+      10,
+      8,
+      5.4,
+      3.9,
+      2.8
+    ],
+    "yearly_total_hours": 2310.9,
+    "daily_avg_hours": 6.33,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BILECIK"
+  },
+  {
+    "city": "Bingöl",
+    "monthly_daily_hours": [
+      3.4,
+      4.5,
+      4.8,
+      5.6,
+      7.1,
+      9.1,
+      9.4,
+      9,
+      8.1,
+      6.1,
+      4.5,
+      3.3
+    ],
+    "yearly_total_hours": 2281.1,
+    "daily_avg_hours": 6.25,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BINGOL"
+  },
+  {
+    "city": "Bitlis",
+    "monthly_daily_hours": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "yearly_total_hours": 2300,
+    "daily_avg_hours": 7.4,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BITLIS"
+  },
+  {
+    "city": "Bolu",
+    "monthly_daily_hours": [
+      2.1,
+      2.9,
+      4,
+      5.3,
+      6.7,
+      8.1,
+      8.9,
+      8.6,
+      6.8,
+      4.8,
+      3.4,
+      2.1
+    ],
+    "yearly_total_hours": 1942.4,
+    "daily_avg_hours": 5.32,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BOLU"
+  },
+  {
+    "city": "Burdur",
+    "monthly_daily_hours": [
+      3.8,
+      5,
+      5.9,
+      7.1,
+      8.9,
+      10.8,
+      11.7,
+      11,
+      9.2,
+      7.3,
+      5.5,
+      3.3
+    ],
+    "yearly_total_hours": 2726.9,
+    "daily_avg_hours": 7.47,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BURDUR"
+  },
+  {
+    "city": "Bursa",
+    "monthly_daily_hours": [
+      2.9,
+      3.4,
+      4.2,
+      5.8,
+      7.7,
+      9.6,
+      10.7,
+      10.1,
+      7.9,
+      5.6,
+      4.1,
+      2.9
+    ],
+    "yearly_total_hours": 2284.3,
+    "daily_avg_hours": 6.26,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=BURSA"
+  },
+  {
+    "city": "Çanakkale",
+    "monthly_daily_hours": [
+      3.2,
+      4.5,
+      5.5,
+      7.4,
+      9,
+      10.9,
+      11.9,
+      11.3,
+      9,
+      6.5,
+      4.4,
+      3.2
+    ],
+    "yearly_total_hours": 2645.6,
+    "daily_avg_hours": 6.25,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=CANAKKALE"
+  },
+  {
+    "city": "Çankırı",
+    "monthly_daily_hours": [
+      2.3,
+      3.6,
+      5.2,
+      6.4,
+      7.9,
+      9.5,
+      10.7,
+      10,
+      8.5,
+      6.3,
+      4,
+      2
+    ],
+    "yearly_total_hours": 2329.2,
+    "daily_avg_hours": 6.38,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=CANKIRI"
+  },
+  {
+    "city": "Çorum",
+    "monthly_daily_hours": [
+      2.4,
+      3.6,
+      4.8,
+      6.3,
+      7.4,
+      8.9,
+      10.1,
+      10,
+      8.3,
+      5.7,
+      3.7,
+      2.1
+    ],
+    "yearly_total_hours": 2234.3,
+    "daily_avg_hours": 6.12,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=CORUM"
+  },
+  {
+    "city": "Denizli",
+    "monthly_daily_hours": [
+      3.7,
+      4.5,
+      5.6,
+      7,
+      8.9,
+      10.8,
+      11.7,
+      10.8,
+      9.2,
+      6.8,
+      5,
+      3.5
+    ],
+    "yearly_total_hours": 2667,
+    "daily_avg_hours": 7.31,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=DENIZLI"
+  },
+  {
+    "city": "Diyarbakır",
+    "monthly_daily_hours": [
+      3.8,
+      4.9,
+      5.6,
+      7.2,
+      9.5,
+      12.1,
+      12.3,
+      11.7,
+      10,
+      7.5,
+      5.5,
+      3.9
+    ],
+    "yearly_total_hours": 2864.5,
+    "daily_avg_hours": 7.85,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=DIYARBAKIR"
+  },
+  {
+    "city": "Düzce",
+    "monthly_daily_hours": [
+      2,
+      3,
+      3.8,
+      5.3,
+      6.7,
+      7.9,
+      8.6,
+      8.3,
+      6.6,
+      4.3,
+      2.8,
+      1.9
+    ],
+    "yearly_total_hours": 1865.6,
+    "daily_avg_hours": 5.11,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=DUZCE"
+  },
+  {
+    "city": "Edirne",
+    "monthly_daily_hours": [
+      2.4,
+      3.6,
+      4.5,
+      6.2,
+      8,
+      9.3,
+      10.3,
+      9.8,
+      7.5,
+      5.3,
+      3.2,
+      2.2
+    ],
+    "yearly_total_hours": 2204.3,
+    "daily_avg_hours": 6.04,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=EDIRNE"
+  },
+  {
+    "city": "Elazığ",
+    "monthly_daily_hours": [
+      2.7,
+      3.9,
+      5.2,
+      6.7,
+      8.7,
+      11.1,
+      11.9,
+      11.2,
+      9.6,
+      7.1,
+      4.7,
+      2.5
+    ],
+    "yearly_total_hours": 2600.5,
+    "daily_avg_hours": 7.12,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ELAZIG"
+  },
+  {
+    "city": "Erzincan",
+    "monthly_daily_hours": [
+      2.9,
+      4.1,
+      5,
+      6,
+      7.5,
+      9.8,
+      10.8,
+      10.2,
+      8.7,
+      6.5,
+      4.5,
+      2.9
+    ],
+    "yearly_total_hours": 2404.6,
+    "daily_avg_hours": 6.6,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ERZINCAN"
+  },
+  {
+    "city": "Erzurum",
+    "monthly_daily_hours": [
+      3.4,
+      4.5,
+      5.2,
+      6.4,
+      7.9,
+      10.2,
+      11.2,
+      10.7,
+      9.1,
+      6.9,
+      4.9,
+      3.2
+    ],
+    "yearly_total_hours": 2547.5,
+    "daily_avg_hours": 7.0,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ERZURUM"
+  },
+  {
+    "city": "Eskişehir",
+    "monthly_daily_hours": [
+      2.7,
+      4,
+      5.2,
+      6.2,
+      8.2,
+      9.9,
+      11.4,
+      10.7,
+      8.8,
+      6.3,
+      4.6,
+      2.5
+    ],
+    "yearly_total_hours": 2454,
+    "daily_avg_hours": 6.72,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ESKISEHIR"
+  },
+  {
+    "city": "Gaziantep",
+    "monthly_daily_hours": [
+      3.5,
+      4.3,
+      5.4,
+      6.8,
+      8.4,
+      10.3,
+      10.6,
+      9.9,
+      8.7,
+      7,
+      5.3,
+      3.5
+    ],
+    "yearly_total_hours": 2550.7,
+    "daily_avg_hours": 8.99,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=GAZIANTEP"
+  },
+  {
+    "city": "Giresun",
+    "monthly_daily_hours": [
+      1.2,
+      1.8,
+      1.5,
+      2.1,
+      2.5,
+      3.5,
+      2.9,
+      2.5,
+      2,
+      1.5,
+      1.8,
+      1.2
+    ],
+    "yearly_total_hours": 744.7,
+    "daily_avg_hours": 2.04,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=GIRESUN"
+  },
+  {
+    "city": "Gümüşhane",
+    "monthly_daily_hours": [
+      1.5,
+      3.8,
+      4.9,
+      6.1,
+      7.3,
+      8.9,
+      9.9,
+      9.7,
+      7.9,
+      5.5,
+      2.4,
+      1.3
+    ],
+    "yearly_total_hours": 2108.5,
+    "daily_avg_hours": 5.78,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=GUMUSHANE"
+  },
+  {
+    "city": "Hakkari",
+    "monthly_daily_hours": [
+      4.1,
+      5.3,
+      5.8,
+      6.7,
+      8.8,
+      11.7,
+      12.2,
+      11.4,
+      10,
+      7.3,
+      5.3,
+      3.9
+    ],
+    "yearly_total_hours": 2817.9,
+    "daily_avg_hours": 7.72,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=HAKKARI"
+  },
+  {
+    "city": "Hatay",
+    "monthly_daily_hours": [
+      3.4,
+      4.6,
+      6,
+      7.3,
+      9.1,
+      10.7,
+      11.1,
+      10.3,
+      9.3,
+      7.1,
+      5,
+      3.4
+    ],
+    "yearly_total_hours": 2660.2,
+    "daily_avg_hours": 8.29,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=HATAY"
+  },
+  {
+    "city": "Iğdır",
+    "monthly_daily_hours": [
+      2.5,
+      3.9,
+      5.3,
+      6.1,
+      7.4,
+      9.5,
+      10.1,
+      9.6,
+      8.5,
+      6,
+      4.1,
+      2.4
+    ],
+    "yearly_total_hours": 2297.5,
+    "daily_avg_hours": 6.29,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=IGDIR"
+  },
+  {
+    "city": "Isparta",
+    "monthly_daily_hours": [
+      3.7,
+      4.7,
+      5.7,
+      6.7,
+      8.2,
+      10,
+      11.1,
+      10.6,
+      9.3,
+      7,
+      5.3,
+      3.3
+    ],
+    "yearly_total_hours": 2608.2,
+    "daily_avg_hours": 7.15,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ISPARTA"
+  },
+  {
+    "city": "İstanbul",
+    "monthly_daily_hours": [
+      0.5,
+      0.3,
+      0.6,
+      0.8,
+      0.7,
+      0.7,
+      0.7,
+      0.8,
+      0.6,
+      0.4,
+      0.2,
+      0.6
+    ],
+    "yearly_total_hours": 210.7,
+    "daily_avg_hours": 0.58,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ISTANBUL"
+  },
+  {
+    "city": "İzmir",
+    "monthly_daily_hours": [
+      4.3,
+      5.3,
+      6.5,
+      8,
+      9.8,
+      11.6,
+      12.3,
+      11.9,
+      10.1,
+      7.7,
+      5.6,
+      4.2
+    ],
+    "yearly_total_hours": 2965.1,
+    "daily_avg_hours": 8.12,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=IZMIR"
+  },
+  {
+    "city": "Kahramanmaraş",
+    "monthly_daily_hours": [
+      3.3,
+      4,
+      5.3,
+      6.6,
+      8.1,
+      10,
+      10.5,
+      9.8,
+      8.7,
+      6.6,
+      4.4,
+      3.2
+    ],
+    "yearly_total_hours": 2453.8,
+    "daily_avg_hours": 7.8,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KAHRAMANMARAS"
+  },
+  {
+    "city": "Karabük",
+    "monthly_daily_hours": [
+      2.5,
+      3.8,
+      4.6,
+      6.7,
+      6.9,
+      8,
+      9.8,
+      9.6,
+      7.5,
+      5.5,
+      4.4,
+      2.7
+    ],
+    "yearly_total_hours": 2194,
+    "daily_avg_hours": 6.01,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KARABUK"
+  },
+  {
+    "city": "Karaman",
+    "monthly_daily_hours": [
+      3.6,
+      4.7,
+      6.3,
+      7.9,
+      9.8,
+      11.6,
+      12.6,
+      12,
+      10.2,
+      7.6,
+      5.5,
+      3.6
+    ],
+    "yearly_total_hours": 2908.1,
+    "daily_avg_hours": 7.97,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KARAMAN"
+  },
+  {
+    "city": "Kars",
+    "monthly_daily_hours": [
+      3.4,
+      4.5,
+      5.3,
+      6.1,
+      7.4,
+      9.4,
+      10.4,
+      10.3,
+      8.6,
+      6.4,
+      4.7,
+      3.3
+    ],
+    "yearly_total_hours": 2431.5,
+    "daily_avg_hours": 6.66,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KARS"
+  },
+  {
+    "city": "Kastamonu",
+    "monthly_daily_hours": [
+      2.3,
+      3.5,
+      4.5,
+      5.7,
+      7.1,
+      8.4,
+      9.8,
+      9.4,
+      7.3,
+      5.4,
+      3.8,
+      2.1
+    ],
+    "yearly_total_hours": 2112.6,
+    "daily_avg_hours": 5.79,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KASTAMONU"
+  },
+  {
+    "city": "Kayseri",
+    "monthly_daily_hours": [
+      3,
+      4,
+      4.9,
+      6.2,
+      8.3,
+      10.3,
+      11.9,
+      11.4,
+      9.1,
+      6.7,
+      4.8,
+      2.9
+    ],
+    "yearly_total_hours": 2546.1,
+    "daily_avg_hours": 6.98,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KAYSERI"
+  },
+  {
+    "city": "Kırıkkale",
+    "monthly_daily_hours": [
+      2.8,
+      4.3,
+      5.5,
+      7.1,
+      8.5,
+      10.3,
+      11.6,
+      11.1,
+      9,
+      6.6,
+      4.5,
+      2.5
+    ],
+    "yearly_total_hours": 2554,
+    "daily_avg_hours": 7,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KIRIKKALE"
+  },
+  {
+    "city": "Kırklareli",
+    "monthly_daily_hours": [
+      2,
+      2.6,
+      3.6,
+      4.8,
+      6.4,
+      7,
+      7.6,
+      7.6,
+      5.6,
+      4,
+      2.7,
+      1.8
+    ],
+    "yearly_total_hours": 1698.8,
+    "daily_avg_hours": 4.65,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KIRKLARELI"
+  },
+  {
+    "city": "Kırşehir",
+    "monthly_daily_hours": [
+      3.3,
+      4.3,
+      5.3,
+      6.8,
+      8.8,
+      10.8,
+      12,
+      11.5,
+      9.5,
+      7.1,
+      5.2,
+      3.2
+    ],
+    "yearly_total_hours": 2676.6,
+    "daily_avg_hours": 7.33,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KIRSEHIR"
+  },
+  {
+    "city": "Kilis",
+    "monthly_daily_hours": [
+      3.8,
+      4.9,
+      6.2,
+      7.9,
+      9.4,
+      11.3,
+      11.7,
+      11.3,
+      9.9,
+      7.5,
+      5.5,
+      3.8
+    ],
+    "yearly_total_hours": 2839.9,
+    "daily_avg_hours": 7.78,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KILIS"
+  },
+  {
+    "city": "Kocaeli",
+    "monthly_daily_hours": [
+      2.5,
+      3,
+      4,
+      5.8,
+      7.3,
+      8.9,
+      9.5,
+      9,
+      7.1,
+      4.7,
+      3.6,
+      2.6
+    ],
+    "yearly_total_hours": 2073.6,
+    "daily_avg_hours": 5.68,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KOCAELI"
+  },
+  {
+    "city": "Konya",
+    "monthly_daily_hours": [
+      3.2,
+      4.6,
+      5.9,
+      7.1,
+      8.9,
+      10.5,
+      11.6,
+      11.2,
+      9.6,
+      7.3,
+      5.3,
+      3.2
+    ],
+    "yearly_total_hours": 2694.1,
+    "daily_avg_hours": 7.38,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KONYA"
+  },
+  {
+    "city": "Kütahya",
+    "monthly_daily_hours": [
+      2.4,
+      3.5,
+      4.7,
+      6.2,
+      7.6,
+      9.3,
+      10.5,
+      9.8,
+      7.7,
+      5.3,
+      3.7,
+      2.2
+    ],
+    "yearly_total_hours": 2222.5,
+    "daily_avg_hours": 6.09,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=KUTAHYA"
+  },
+  {
+    "city": "Malatya",
+    "monthly_daily_hours": [
+      3.3,
+      4.5,
+      5.7,
+      7.2,
+      9.3,
+      11.5,
+      12.5,
+      11.8,
+      10.1,
+      7.5,
+      5.3,
+      3.2
+    ],
+    "yearly_total_hours": 2801.3,
+    "daily_avg_hours": 7.67,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MALATYA"
+  },
+  {
+    "city": "Manisa",
+    "monthly_daily_hours": [
+      2.7,
+      3.8,
+      5.1,
+      6.2,
+      8.1,
+      10.1,
+      10.8,
+      10.2,
+      8.6,
+      6.2,
+      3.9,
+      2.3
+    ],
+    "yearly_total_hours": 2377.8,
+    "daily_avg_hours": 6.51,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MANISA"
+  },
+  {
+    "city": "Mersin",
+    "monthly_daily_hours": [
+      3.1,
+      4.2,
+      8,
+      13.6,
+      19.5,
+      25.6,
+      29.8,
+      29.7,
+      25.4,
+      18.7,
+      11.1,
+      5.5
+    ],
+    "yearly_total_hours": 2764.2,
+    "daily_avg_hours": 16.25,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MERSIN"
+  },
+  {
+    "city": "Mardin",
+    "monthly_daily_hours": [
+      4.5,
+      5.2,
+      6,
+      7.4,
+      9.7,
+      12.2,
+      12.4,
+      11.5,
+      10.3,
+      7.8,
+      5.9,
+      4.4
+    ],
+    "yearly_total_hours": 2964.9,
+    "daily_avg_hours": 8.12,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MARDIN"
+  },
+  {
+    "city": "Mersin",
+    "monthly_daily_hours": [
+      3.1,
+      4.2,
+      8,
+      13.6,
+      19.5,
+      25.6,
+      29.8,
+      29.7,
+      25.4,
+      18.7,
+      11.1,
+      5.5
+    ],
+    "yearly_total_hours": 2764.2,
+    "daily_avg_hours": 16.25,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MERSIN"
+  },
+  {
+    "city": "Muğla",
+    "monthly_daily_hours": [
+      4.3,
+      5.2,
+      6.4,
+      7.6,
+      8.7,
+      9.6,
+      9.5,
+      8.9,
+      7.9,
+      6.7,
+      5.6,
+      4.2
+    ],
+    "yearly_total_hours": 2576.3,
+    "daily_avg_hours": 7.6,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MUGLA"
+  },
+  {
+    "city": "Muş",
+    "monthly_daily_hours": [
+      1.9,
+      2.8,
+      4.2,
+      5.6,
+      7.7,
+      10,
+      10.6,
+      10.2,
+      9,
+      6.2,
+      3.6,
+      2
+    ],
+    "yearly_total_hours": 2251.2,
+    "daily_avg_hours": 6.17,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=MUS"
+  },
+  {
+    "city": "Nevşehir",
+    "monthly_daily_hours": [
+      3.1,
+      4.2,
+      5.3,
+      6.7,
+      8.4,
+      10.5,
+      11.9,
+      11.3,
+      9.4,
+      6.5,
+      4.6,
+      3.1
+    ],
+    "yearly_total_hours": 2591.2,
+    "daily_avg_hours": 7.1,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=NEVSEHIR"
+  },
+  {
+    "city": "Niğde",
+    "monthly_daily_hours": [
+      3.8,
+      4.9,
+      5.8,
+      7,
+      8.4,
+      10.3,
+      11.5,
+      11.3,
+      9.9,
+      7.4,
+      5.4,
+      3.8
+    ],
+    "yearly_total_hours": 2727.2,
+    "daily_avg_hours": 7.47,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=NIGDE"
+  },
+  {
+    "city": "Ordu",
+    "monthly_daily_hours": [
+      2.5,
+      3.2,
+      3.4,
+      4.5,
+      5.6,
+      6.8,
+      6.3,
+      6.1,
+      5.2,
+      4.2,
+      3.4,
+      2.5
+    ],
+    "yearly_total_hours": 1635.2,
+    "daily_avg_hours": 4.48,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ORDU"
+  },
+  {
+    "city": "Osmaniye",
+    "monthly_daily_hours": [
+      2.7,
+      3.1,
+      4.1,
+      4.9,
+      6.3,
+      6,
+      6,
+      5.7,
+      5.3,
+      4.4,
+      3,
+      2.5
+    ],
+    "yearly_total_hours": 1645.5,
+    "daily_avg_hours": 8.51,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=OSMANIYE"
+  },
+  {
+    "city": "Rize",
+    "monthly_daily_hours": [
+      2.2,
+      3.1,
+      3.6,
+      4.6,
+      5.7,
+      6.6,
+      5.4,
+      5.3,
+      5,
+      4.2,
+      3,
+      2.2
+    ],
+    "yearly_total_hours": 1549.4,
+    "daily_avg_hours": 4.24,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=RIZE"
+  },
+  {
+    "city": "Sakarya",
+    "monthly_daily_hours": [
+      2.5,
+      3.2,
+      4,
+      5.3,
+      6.6,
+      8.1,
+      8.9,
+      8.5,
+      7,
+      4.7,
+      3.4,
+      2.5
+    ],
+    "yearly_total_hours": 1972.3,
+    "daily_avg_hours": 5.4,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SAKARYA"
+  },
+  {
+    "city": "Samsun",
+    "monthly_daily_hours": [
+      2.7,
+      3.3,
+      3.6,
+      4.8,
+      6.3,
+      8.3,
+      8.9,
+      8.2,
+      6.4,
+      4.7,
+      3.8,
+      2.7
+    ],
+    "yearly_total_hours": 1941.5,
+    "daily_avg_hours": 5.32,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SAMSUN"
+  },
+  {
+    "city": "Siirt",
+    "monthly_daily_hours": [
+      3.6,
+      4.4,
+      5.3,
+      6.6,
+      8.9,
+      11.6,
+      12.1,
+      11.3,
+      9.9,
+      7.2,
+      5.2,
+      3.7
+    ],
+    "yearly_total_hours": 2737.3,
+    "daily_avg_hours": 7.5,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SIIRT"
+  },
+  {
+    "city": "Sinop",
+    "monthly_daily_hours": [
+      2.3,
+      3,
+      3.9,
+      5.3,
+      6.6,
+      8.8,
+      9.6,
+      8.8,
+      6.8,
+      4.7,
+      3.3,
+      2.3
+    ],
+    "yearly_total_hours": 1994.2,
+    "daily_avg_hours": 5.46,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SINOP"
+  },
+  {
+    "city": "Sivas",
+    "monthly_daily_hours": [
+      2.6,
+      3.6,
+      4.8,
+      6.3,
+      8,
+      10.5,
+      11.9,
+      11.4,
+      9.4,
+      6.5,
+      4.2,
+      2.5
+    ],
+    "yearly_total_hours": 2491.5,
+    "daily_avg_hours": 6.83,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SIVAS"
+  },
+  {
+    "city": "Şanlıurfa",
+    "monthly_daily_hours": [
+      4.1,
+      5.1,
+      6.3,
+      7.8,
+      10,
+      12.1,
+      12.3,
+      11.3,
+      10,
+      7.9,
+      5.8,
+      4
+    ],
+    "yearly_total_hours": 2946.7,
+    "daily_avg_hours": 8.07,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SANLIURFA"
+  },
+  {
+    "city": "Şırnak",
+    "monthly_daily_hours": [
+      3.4,
+      4.9,
+      5.4,
+      7.5,
+      8.5,
+      10.6,
+      11.2,
+      11.1,
+      10.2,
+      7.4,
+      5.3,
+      3.9
+    ],
+    "yearly_total_hours": 2723.1,
+    "daily_avg_hours": 7.7,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=SIRNAK"
+  },
+  {
+    "city": "Tekirdağ",
+    "monthly_daily_hours": [
+      2.7,
+      3.5,
+      4.4,
+      6,
+      7.5,
+      8.6,
+      9.5,
+      8.6,
+      6.9,
+      5,
+      3.2,
+      2.5
+    ],
+    "yearly_total_hours": 2085.2,
+    "daily_avg_hours": 5.71,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=TEKIRDAG"
+  },
+  {
+    "city": "Tokat",
+    "monthly_daily_hours": [
+      2.7,
+      3.8,
+      4.7,
+      6.2,
+      7.3,
+      8,
+      8.5,
+      9.3,
+      8.3,
+      5.8,
+      4.1,
+      2.6
+    ],
+    "yearly_total_hours": 2172.3,
+    "daily_avg_hours": 5.95,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=TOKAT"
+  },
+  {
+    "city": "Trabzon",
+    "monthly_daily_hours": [
+      2.7,
+      3.3,
+      3.4,
+      4.4,
+      5.6,
+      7.1,
+      5.9,
+      5.6,
+      4.9,
+      4.5,
+      3.6,
+      2.7
+    ],
+    "yearly_total_hours": 1634.8,
+    "daily_avg_hours": 4.48,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=TRABZON"
+  },
+  {
+    "city": "Tunceli",
+    "monthly_daily_hours": [
+      3.4,
+      4.4,
+      5.3,
+      6.5,
+      8.4,
+      10.8,
+      11.6,
+      10.7,
+      9.2,
+      6.7,
+      5,
+      3.2
+    ],
+    "yearly_total_hours": 2596.5,
+    "daily_avg_hours": 7.11,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=TUNCELI"
+  },
+  {
+    "city": "Uşak",
+    "monthly_daily_hours": [
+      3.9,
+      4.6,
+      5.5,
+      6.8,
+      8.8,
+      10.9,
+      11.8,
+      11.3,
+      9.6,
+      7.3,
+      5.3,
+      3.8
+    ],
+    "yearly_total_hours": 2731.2,
+    "daily_avg_hours": 7.48,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=USAK"
+  },
+  {
+    "city": "Van",
+    "monthly_daily_hours": [
+      4.7,
+      5.5,
+      6,
+      7.4,
+      9.3,
+      11.7,
+      12.1,
+      11.4,
+      9.8,
+      7.1,
+      5.6,
+      4.3
+    ],
+    "yearly_total_hours": 2890.9,
+    "daily_avg_hours": 7.92,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=VAN"
+  },
+  {
+    "city": "Yalova",
+    "monthly_daily_hours": [
+      2.1,
+      3.2,
+      4.3,
+      5.8,
+      7.6,
+      8.9,
+      9.5,
+      8.8,
+      7.2,
+      4.9,
+      2.8,
+      1.8
+    ],
+    "yearly_total_hours": 2039.6,
+    "daily_avg_hours": 5.59,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=YALOVA"
+  },
+  {
+    "city": "Yozgat",
+    "monthly_daily_hours": [
+      3,
+      4.1,
+      5.1,
+      6.3,
+      7.9,
+      9.6,
+      10.8,
+      10.5,
+      8.8,
+      6.5,
+      4.7,
+      3
+    ],
+    "yearly_total_hours": 2447.6,
+    "daily_avg_hours": 6.71,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=YOZGAT"
+  },
+  {
+    "city": "Zonguldak",
+    "monthly_daily_hours": [
+      2.3,
+      2.8,
+      3.8,
+      5.2,
+      6.8,
+      9,
+      9.9,
+      9.2,
+      7.2,
+      4.9,
+      3.4,
+      2.4
+    ],
+    "yearly_total_hours": 2040.7,
+    "daily_avg_hours": 5.59,
+    "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?m=ZONGULDAK"
+  }
+]
