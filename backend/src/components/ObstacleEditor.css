@@ -1,0 +1,12 @@
+/* Koordinat etiketlerinin dış stili */
+.oe-coord-label {
+  font-size: 12px;
+  fill: #0f172a;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  pointer-events: none;
+  letter-spacing: 0.2px;
+  text-rendering: geometricPrecision;
+}

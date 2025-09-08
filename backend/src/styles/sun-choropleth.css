@@ -1,0 +1,112 @@
+/* src/styles/sun-choropleth.css */
+
+.sun-legend {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  background: rgba(255, 255, 255, 0.95); /* fallback: blur yok */
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  max-width: calc(100% - 24px);
+  z-index: 10;
+}
+
+/* Blur desteği olan tarayıcılarda etkinleştir (Safari dahil) */
+@supports (
+  (-webkit-backdrop-filter: blur(2px)) or (backdrop-filter: blur(2px))
+) {
+  .sun-legend {
+    background: rgba(
+      255,
+      255,
+      255,
+      0.85
+    ); /* blur görünür olsun diye biraz şeffaf */
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+}
+.sun-legend__title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+.sun-legend__bar {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 2px;
+  height: 10px;
+  margin-bottom: 4px;
+}
+.sun-legend__swatch {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+.sun-legend__ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #6b7280;
+
+  /* cross-browser selection off */
+  -webkit-user-select: none; /* Safari / iOS */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* eski Edge/IE */
+  user-select: none;         /* modern tarayıcılar */
+  -webkit-touch-callout: none; /* iOS uzun basma menüsünü kapat (opsiyonel) */
+}
+
+/* 8 renk sınıfı (COLORS dizinizle uyumlu) */
+.sun-legend__swatch.c0 {
+  background: #2b6cb0;
+}
+.sun-legend__swatch.c1 {
+  background: #3399ff;
+}
+.sun-legend__swatch.c2 {
+  background: #5cc8ff;
+}
+.sun-legend__swatch.c3 {
+  background: #7fe3c1;
+}
+.sun-legend__swatch.c4 {
+  background: #fff59d;
+}
+.sun-legend__swatch.c5 {
+  background: #ffcc80;
+}
+.sun-legend__swatch.c6 {
+  background: #ff8a65;
+}
+.sun-legend__swatch.c7 {
+  background: #ef5350;
+}
+
+/* (opsiyonel) jvectormap tooltip küçük düzenlemeleri */
+.jvectormap-tip {
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.jvectormap-tip .jv-city {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2px;
+}
+.jvectormap-tip .jv-row {
+  line-height: 1.25rem;
+}
+.jvectormap-tip .jv-sun {
+  color: #ea580c;
+  font-weight: 700;
+}
+.jvectormap-tip .jv-ghi {
+  color: #16a34a;
+  font-weight: 700;
+}
