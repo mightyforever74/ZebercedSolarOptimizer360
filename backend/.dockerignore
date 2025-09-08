@@ -1,0 +1,21 @@
+# Python artefacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VCS / env
+.git/
+.env*
+*.log
+
+# FRONTEND kalıntıları (yanlışlıkla konmuşsa dışla)
+src/**/*.ts
+src/**/*.tsx
+src/**/*.jsx
+src/**/*.js
+src/**/*.css
+src/**/*.scss
+src/**/*.svg
+src/**/*.json
+src/**/*.md

@@ -1,0 +1,22 @@
+# Ağır/ilgisi olmayan şeyleri dışla
+.git
+**/.git
+.gitignore
+node_modules
+.next
+dist
+out
+*.log
+**/*.log
+**/.DS_Store
+**/__pycache__
+# Sunucu tarafı büyük klasörler (frontend build'e gerek yok)
+nginx/
+nginx/log/
+backend/**
+backup_envs_*
+ssh
+çssh
+
+# ÖNEMLİ: backend/ asla ignore edilmesin; FE build için backend/src gerekiyor.
+# (Yani burada "backend/" satırı OLMAYACAK)
