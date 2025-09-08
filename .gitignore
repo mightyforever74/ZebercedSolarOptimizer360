@@ -4,7 +4,7 @@ data/redis/
 *.pyc
 *.pyo
 *.pyd
-
+*.bak*
 .DS_Store
 .vscode/
 .idea/
@@ -48,6 +48,9 @@ __pycache__/
 *.sqlite3
 *.env
 .env.*
+backend/.env
+backup_envs_*/
+
 
 # Vite / React
 .vite/
@@ -63,7 +66,7 @@ vite.svg
 *.njsproj
 *.sln
 *.sw?
-
+*.swp
 # Secrets
 *.key
 *.pem
@@ -77,8 +80,15 @@ credentials.json
 *.zip
 exported_reports/
 node_modules/
+frontend/node_modules/
+frontend/.next/
 .next/
 dist/
 *.log
 .env.local
-
+.env
+.git/
+# Nginx & Certbot
+nginx/log/
+certbot/certificates/
+certbot/certificates/**/*

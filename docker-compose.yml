@@ -1,34 +1,155 @@
 services:
-  api:
-    build: .
-    container_name: solar_api
-    env_file: .env
-    ports:
-      - "5005:5005"
-    volumes:
-      - .:/app
-    depends_on:
-      - redis
-      - postgres
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: https://api.solaroptimizer360.com
+    container_name: solar_frontend
     restart: always
+    expose:
+      - "3000"
+    environment:
+      TZ: Europe/Istanbul
+      NODE_ENV: production
+      NODE_OPTIONS: --max-old-space-size=256
+      NEXT_PUBLIC_API_URL: https://api.solaroptimizer360.com
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - solar_net
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  backend:
+    build: ./backend
+    container_name: solar_backend
+    restart: always
+    env_file:
+      - ./.env
+      - ./backend/.env
+    environment:
+      TZ: Europe/Istanbul
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    # güvenlik: dışarı publish ETME (ya da localhost'a bağla)
+    # ports:
+    #   - "127.0.0.1:8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - solar_net
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >
+          python -c "import urllib.request,sys;
+          req=urllib.request.Request('http://127.0.0.1:8000/api/health',
+          headers={'X-Forwarded-Proto':'https','Host':'api.solaroptimizer360.com'});
+          sys.exit(0 if urllib.request.urlopen(req, timeout=3).status==200 else 1)"
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+
 
   redis:
     image: redis:7-alpine
     container_name: solar_redis
     restart: always
-    ports:
-      - "6379:6379"
+    environment:
+      TZ: Europe/Istanbul
+    networks:
+      - solar_net
 
   postgres:
     image: postgres:15-alpine
     container_name: solar_postgres
     restart: always
-    env_file: .env
-    ports:
-      - "5432:5432"
+    env_file:
+      - ./.env
+    environment:
+      TZ: Europe/Istanbul
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql   # ✅ init script mount
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - solar_net
+
+  nginx:
+    image: nginx:alpine
+    container_name: solar_nginx
+    restart: always
+    environment:
+      TZ: Europe/Istanbul
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./certbot/certificates:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      - ./nginx/log:/var/log/nginx
+    depends_on:
+      backend:
+        condition: service_healthy     # backend hazır olmadan nginx başlamasın
+      frontend:
+        condition: service_started
+    networks:
+      - solar_net
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
+    healthcheck:
+      test: ["CMD-SHELL", "nginx -t || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  certbot:
+    image: certbot/certbot
+    container_name: solar_certbot
+    depends_on:
+      - nginx
+    volumes:
+      - ./certbot/certificates:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: >
+      sh -c "certbot certonly --webroot
+      --webroot-path=/var/www/certbot
+      --email admin@solaroptimizer360.com
+      --agree-tos
+      --no-eff-email
+      -d solaroptimizer360.com
+      -d www.solaroptimizer360.com
+      -d api.solaroptimizer360.com"
+    networks:
+      - solar_net
 
 volumes:
   pgdata:
+    external: true
+    name: zebercedsolaroptimizer360_pgdata
+
+networks:
+  solar_net:
+    driver: bridge
