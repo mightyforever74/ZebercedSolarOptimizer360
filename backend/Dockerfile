@@ -22,7 +22,8 @@ RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 # Proje dosyaları
-COPY src ./src     # <- sadece backend/src kopyalanır
+COPY src ./src     
+# <- sadece backend/src kopyalanır
 
 # Bekleme scriptini kopyala
 COPY wait-for-postgres.sh /wait-for-postgres.sh

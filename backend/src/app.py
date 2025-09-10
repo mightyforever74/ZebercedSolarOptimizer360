@@ -34,13 +34,21 @@ allowed_origins = [o.strip() for o in _allowed.split(",") if o.strip()]
 
 # Sadece ALLOWED_ORIGINS listesindeki origin’lerden /api/* isteklerine izin verilir.
 app = Flask(__name__)
+
+ALLOWED_ORIGINS = [
+    "https://solaroptimizer360.com",
+    "https://www.solaroptimizer360.com",
+    "https://app.solaroptimizer360.com",
+]
+
 CORS(
     app,
-    resources={r"/api/*": {"origins": allowed_origins}},
+    resources={r"/api/*": {"origins": ALLOWED_ORIGINS}},
     supports_credentials=True,
-    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
+
 # Config
 PORT = int(os.getenv("PORT", "8000"))
 DATABASE_URL = os.getenv('DATABASE_URL')
