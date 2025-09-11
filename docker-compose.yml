@@ -41,9 +41,6 @@ services:
     environment:
       TZ: Europe/Istanbul
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
-    # güvenlik: dışarı publish ETME (ya da localhost'a bağla)
-    # ports:
-    #   - "127.0.0.1:8000:8000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -134,7 +131,6 @@ services:
       timeout: 5s
       retries: 3
 
-  # Sertifikaları ihtiyaç olduğunda üretmek için profilli tek-seferlik job'lar
   certbot_api:
     image: certbot/certbot
     profiles: ["certs"]
@@ -167,4 +163,5 @@ volumes:
 networks:
   solar_net:
     driver: bridge
+
 
